@@ -7,8 +7,8 @@ GetTodo = pydantic_model_creator(Todo, name="Todo")
 
 class PostTodo(BaseModel):
     task: str = Field(... , max_length=100)
-    done : bool
+    done : bool = Field(default=False)
 
 class PutTodo(BaseModel):
     task: Optional[str] = Field(None, max_length=100)
-    done: Optional[bool]
+    done: Optional[bool] = Field(default=False)
